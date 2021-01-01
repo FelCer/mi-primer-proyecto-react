@@ -1,7 +1,10 @@
 import React from 'react';
 
-const helloWorld = () => {
-    <h1>Hola Mundo !</h1>
+/* Importación de estilos*/
+import '../assets/styles/index.scss'
+
+const HelloWorld = () => {
+    return <h1>Hola Mundo !!!!</h1>
 };
 
-export default helloWorld;
+export default HelloWorld;
