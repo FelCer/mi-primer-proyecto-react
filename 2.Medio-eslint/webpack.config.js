@@ -6,10 +6,10 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = (env) => {
 
     var mode = (env.NODE_ENV) ? env.NODE_ENV : "";
-    
+
     var plugins = [
         new MiniCssExtractPlugin({
-            filename: "assets/[name]..css"
+            filename: path.resolve(__dirname, "assets/[name].css")
         }),
         new HtmlWebPackPlugin({
             template: './public/index.html',
