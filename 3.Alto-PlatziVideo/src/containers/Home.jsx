@@ -9,15 +9,31 @@ import Search from "../components/Search";
 import Categories from "../components/Categories";
 import Carousel from "../components/Carousel";
 import CarouselItem from "../components/CarouselItem";
+import Header from "../components/Header.jsx";
 
 import "../assets/styles/App.scss";
 
-const Home = ({ myList = [], trends = [], originals = [] }) => {
+const Home = ({ myList = [], trends = [], originals = [], searchVideos = [] }) => {
+    console.log(searchVideos);
     return (
     <>
-      <Search />
-
+      <Header />
+      <Search isHome/>
       {/* Anidando componentes */}
+      {searchVideos.length > 0 && (
+        <Categories title="Resultados de busqueda">
+          <Carousel>
+            {searchVideos.map((item) => (
+              <CarouselItem 
+                key={item.id} 
+                {...item}
+                isList
+              />
+            ))}
+          </Carousel>
+        </Categories>
+      )}
+
       {myList.length > 0 && (
         <Categories title="Lista">
           <Carousel>
@@ -58,11 +74,11 @@ const Home = ({ myList = [], trends = [], originals = [] }) => {
 //export default Home;
 
 const mapStateToProps = state => {
-    console.log(state);
     return {
         myList: state.myList,
         trends: state.trends,
-        originals: state.originals
+        originals: state.originals,
+        searchVideos: state.searchVideos
     };
 };
 /**

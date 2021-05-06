@@ -7,6 +7,7 @@ import Home from '../containers/Home.jsx';
 import Login from '../containers/Login.jsx';
 import Register from '../containers/Register.jsx';
 import Notfound from '../containers/Notfound.jsx';
+import Player from '../containers/Player.jsx'
 
 /**
  * Components
@@ -21,6 +22,7 @@ const App = () => (
                 <Route exact path="/" component={Home}/>
                 <Route exact path="/login" component={Login}/>
                 <Route exact path="/register" component={Register}/>
+                <Route exact path="/player/:id" component={Player}/>
                 <Route component={Notfound}/>
             </Switch>
         </Layout>

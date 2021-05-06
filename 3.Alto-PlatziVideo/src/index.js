@@ -9,7 +9,7 @@ import ReactDOM from 'react-dom';
 /**
  * Crea el almacenamiento del estado.
 */
-import { createStore } from 'redux';
+import { createStore, compose } from 'redux';
 
 /**
  * Reducer
@@ -38,7 +38,7 @@ const initialState = {
             "duration": 148,
             "cover": "http://dummyimage.com/800x600.png/306880/ffffff",
             "description": "Vestibulum ac est lacinia nisi venenatis tristique",
-            "source": "https://mdstrm.com/video/58333e214ad055d208427db5.mp4"
+            "source": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
         },
         {
             "id": 9,
@@ -51,7 +51,7 @@ const initialState = {
             "duration": 128,
             "cover": "http://dummyimage.com/800x600.png/604180/ffffff",
             "description": "Vestibulum ac est lacinia nisi venenatis tristique",
-            "source": "https://mdstrm.com/video/58333e214ad055d208427db5.mp4"
+            "source": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
         },
         {
             "id": 10,
@@ -64,7 +64,7 @@ const initialState = {
             "duration": 346,
             "cover": "http://dummyimage.com/800x600.png/FF91BA/ffffff",
             "description": "Vestibulum ac est lacinia nisi venenatis tristique",
-            "source": "https://mdstrm.com/video/58333e214ad055d208427db5.mp4"
+            "source": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
         },
         {
             "id": 11,
@@ -77,7 +77,7 @@ const initialState = {
             "duration": 226,
             "cover": "http://dummyimage.com/800x600.png/45807C/ffffff",
             "description": "Vestibulum ac est lacinia nisi venenatis tristique",
-            "source": "https://mdstrm.com/video/58333e214ad055d208427db5.mp4"
+            "source": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
         },
         {
             "id": 12,
@@ -90,7 +90,7 @@ const initialState = {
             "duration": 190,
             "cover": "http://dummyimage.com/800x600.png/577380/ffffff",
             "description": "Vestibulum ac est lacinia nisi venenatis tristique",
-            "source": "https://mdstrm.com/video/58333e214ad055d208427db5.mp4"
+            "source": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
         },
         {
             "id": 13,
@@ -103,12 +103,14 @@ const initialState = {
             "duration": 160,
             "cover": "http://dummyimage.com/800x600.png/5472FF/ffffff",
             "description": "Vestibulum ac est lacinia nisi venenatis tristique",
-            "source": "https://mdstrm.com/video/58333e214ad055d208427db5.mp4"
+            "source": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
         }
     ]
 }
 
-const store = createStore(reducer, initialState);
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION__ || compose;
+
+const store = createStore(reducer, initialState, composeEnhancers());
 
 ReactDOM.render(
     <Provider store={store}>

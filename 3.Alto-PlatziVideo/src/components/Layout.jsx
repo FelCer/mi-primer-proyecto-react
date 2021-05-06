@@ -3,12 +3,10 @@ import React from "react";
 /*
  * Components
  */
-import Header from "./Header.jsx";
 import Footer from "./Footer.jsx";
 
 const Layout = ({ children }) => (
   <div className="App">
-    <Header />
         {children}
     <Footer />
   </div>

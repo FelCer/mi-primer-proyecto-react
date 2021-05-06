@@ -16,13 +16,47 @@ const reducer = (state, action) => {
                 ...state,
                 myList: [...state.myList, action.payload]
             }
-            case actions.deleteFavorite:
-                return {
-                    ...state,
-                    myList: state.myList.filter(items => items.id !== action.payload)
-                }
-                default:
-                    return state;
+            break;
+        case actions.deleteFavorite:
+            return {
+                ...state,
+                myList: state.myList.filter(items => items.id !== action.payload)
+            }
+            break;
+        case actions.loginRequest:
+            return {
+                ...state,
+                user: action.payload
+            }
+            break;
+        case actions.logoutRequest:
+            return {
+                ...state,
+                user: action.payload
+            }
+            break;
+        case actions.registerRequest:
+            return {
+                ...state,
+                user: action.payload
+            }
+            break;
+        case actions.getVideoSource:
+            return {
+                ...state,
+                playing: state.trends.find(item => item.id === Number(action.payload)) ||
+                    state.originals.find(item => item.id === Number(action.payload)) || []
+            }
+            break;
+        case actions.searchVideoSource:
+            return {
+                ...state,
+                searchVideos: state.originals.filter(item => item.id === Number(action.payload))
+            }
+            break;
+        default:
+            return state;
+            break;
     }
 }
 export default reducer
