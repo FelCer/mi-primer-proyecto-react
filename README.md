@@ -11,7 +11,18 @@
     * Create for webpack cli.
     * Simple example of react.
 3. Higth
-    * 
+    * Robust platzi video project, introducing babel, webpack, fake-Api and redux.
+
+### Attention:
+ * Install globally and with administrator permissions json-server for example `sudo npm json-server -g`
+ * The command `npm run start` it is not yet linked to an API on a server, modify if you want to launch.
+### Notas:
+ 1. Redux is a library written in JavaScript, based on the Flux architecture and created by Dan Abramov, it is based on 3 fundamental principles:
+   * There is only one source of truth.
+   * Status is read-only.
+   * We can only use pure functions.
+   Our UI will activate an action, this action will execute a reducer to modify the information of the store, and when the store is updated, the UI will be modified.
+
 ## Spanish / Español
 
 ### Carpetas
@@ -23,7 +34,7 @@
    * Creado por medio de webpack cli
    * Ejemplo sencillo de react
 3. Alto
-   * Proyecto robusto de platzi video, intregando babel, webpack, fake-Api
+   * Proyecto robusto de platzi video, intregando babel, webpack, fake-Api y redux.
 
 ### Atención:
  * Instalar global mente y con permisos de administrador json-server por ejemplo `sudo npm json-server -g`
