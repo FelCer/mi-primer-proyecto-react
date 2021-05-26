@@ -22,6 +22,8 @@ import reducer from './reducers';
 import Home from './routes/App';
 
 const initialState = {
+    "loading": false,
+    "error": '',
     "user": {},
     "playing": {},
     "myList": [],
