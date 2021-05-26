@@ -54,6 +54,19 @@ const reducer = (state, action) => {
                 searchVideos: state.originals.filter(item => item.id === Number(action.payload))
             }
             break;
+        case actions.loading:
+            return {
+                ...state,
+                loading: true
+            }
+            break;
+        case actions.error:
+            return {
+                ...state,
+                error: action.payload,
+                loading: false
+            }
+            break;
         default:
             return state;
             break;

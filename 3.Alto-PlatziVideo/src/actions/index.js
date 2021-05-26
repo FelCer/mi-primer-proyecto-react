@@ -6,6 +6,8 @@ export const actions = {
     registerRequest: 'REGISTER_REQUEST',
     getVideoSource: 'GET_VIDEO_SOURCE',
     searchVideoSource: 'SEARCH_VIDEO_SOURCE',
+    loading: 'LOADING',
+    error: 'ERROR'
 };
 
 export const setFavorite = payload => ({

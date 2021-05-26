@@ -10,14 +10,25 @@ import Categories from "../components/Categories";
 import Carousel from "../components/Carousel";
 import CarouselItem from "../components/CarouselItem";
 import Header from "../components/Header.jsx";
+import Spinner from "../components/Spinner.jsx";
+import Error from "../components/Error.jsx";
 
 import "../assets/styles/App.scss";
+import "../assets/styles/components/Spinner.scss";
 
-const Home = ({ myList = [], trends = [], originals = [], searchVideos = [] }) => {
-    console.log(searchVideos);
+const Home = ({ myList = [], trends = [], originals = [], searchVideos = [], loading, error }) => {
+    console.log(loading);
+
+    //if(!loading)
+      //return <Spinner/>
+
+    //if(!error)
+      //return <Error message="Ocurrio un error"/>
+  
     return (
     <>
       <Header />
+      
       <Search isHome/>
       {/* Anidando componentes */}
       {searchVideos.length > 0 && (
@@ -78,7 +89,9 @@ const mapStateToProps = state => {
         myList: state.myList,
         trends: state.trends,
         originals: state.originals,
-        searchVideos: state.searchVideos
+        searchVideos: state.searchVideos,
+        loading: state.loading,
+        error: state.error
     };
 };
 /**
