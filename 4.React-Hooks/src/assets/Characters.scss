@@ -1,0 +1,16 @@
+@use 'Characters/characters';
+
+html, body { // defauld light mode
+    padding: 0;
+    margin: 0;
+}
+
+.light-mode {
+    background-color: white;
+    color: black;
+}
+
+.dark-mode {
+    background-color: black;
+    color:white;
+}
