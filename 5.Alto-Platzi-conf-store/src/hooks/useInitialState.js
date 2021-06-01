@@ -6,23 +6,39 @@ import initialState from '../initialState';
 const useIntialState = () => {
     const [state, setState] = useState(initialState);
 
-    const addToCart = paylad => {
+    const addToCart = payload => {
         setState({
             ...state,
-            cart: [...state.cart, paylad]
+            cart: [...state.cart, payload]
         })
     };
 
-    const removeToCart = paylad => {
+    const removeFromCart = (payload) => {
         setState({
             ...state,
-            cart: state.cart.filter(items => items.id !== paylad.id)
-        })
+            cart: state.cart.filter((items) => items.cartId !== payload),
+        });
     };
+
+    const addToBuyer = (payload) => {
+        setState({
+            ...state,
+            buyer: payload
+        });
+    };
+
+    const addNewOrder = (payload) => {
+        setState({
+            ...state,
+            orders: [...state.orders, payload]
+        })
+    }
 
     return {
         addToCart,
-        removeToCart,
+        removeFromCart,
+        addToBuyer,
+        addNewOrder,
         state
     }
 };
